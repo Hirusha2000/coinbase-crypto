@@ -121,5 +121,12 @@ def test():
     print("Test route called.")
     return jsonify({'status': 'success', 'message': 'API is running!'}), 200
 
+# Sample endpoint to check if the API is running
+@app.route('/health-check', methods=['GET'])
+def health_check():
+    print("Health check endpoint called.")
+    return jsonify({'status': 'success', 'message': 'API is healthy and running!'}), 200
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
