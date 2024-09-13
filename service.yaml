@@ -1,0 +1,14 @@
+# This YAML file is a generic Service definition similar to service-selecter.yaml but without a specific version selector:
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-app-service
+spec:
+  selector:
+    app: flask-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: LoadBalancer
